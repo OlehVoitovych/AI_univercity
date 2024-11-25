@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
 
+#ohttps://github.com/plotly/datasets/blob/master/iris.csv
 df = pd.read_csv('data.csv')
 
 print(df.head())
@@ -17,8 +18,6 @@ print(df.head())
 label_encoder = LabelEncoder()
 df['Name_encoded'] = label_encoder.fit_transform(df['Name'])
 
-label_mapping = dict(zip(label_encoder.classes_, label_encoder.transform(label_encoder.classes_)))
-print("Label Mapping:", label_mapping)
 
 X = df[['SepalLength', 'SepalWidth', 'PetalLength', 'PetalWidth']].values
 y = df['Name_encoded'].values
