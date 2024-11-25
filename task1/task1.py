@@ -52,7 +52,7 @@ def create_model(input_dim, activation='relu', optimizer='adam'):
     model.add(Dense(64, input_dim=input_dim, activation=activation))
     model.add(Dropout(0.3))
     model.add(Dense(32, input_dim=input_dim, activation=activation))
-    model.add(Dropout(0,3))
+    model.add(Dropout(0.3))
     model.add(Dense(16, input_dim=input_dim, activation=activation))
     model.add(Dense(1))
     model.compile(optimizer=optimizer, loss='mse', metrics=['mape'])
